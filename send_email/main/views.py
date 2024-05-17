@@ -5,13 +5,14 @@ from django.views.generic.edit import CreateView
 
 from .models import Contact
 from .forms import ContactForm
+from .service import send
 
 
 class ContactView(CreateView):
 
     model = Contact
     form_class = ContactForm
-    success_url = "/"
+    success_url = "/contact/"
     template_name = "main/contact.html"
 
     def form_valid(self, form):
