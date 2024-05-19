@@ -133,8 +133,6 @@ EMAIL_HOST_PASSWORD = "мой пароль"
 EMAIL_PORT = 587
 
 # celery + redis настройка
-
-
 REDIS_HOST = "localhost"
 REDIS_PORT = "6379"
 CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + REDIS_PORT + "/0"
