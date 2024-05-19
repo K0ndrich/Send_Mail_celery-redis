@@ -8,5 +8,5 @@ def send(user_email):
         "Мы будем присылать много спама",
         "123kondrich@gmail.com",
         [user_email],
-        fail_silently=True,
+        fail_silently=False,
     )

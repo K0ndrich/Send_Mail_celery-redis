@@ -55,7 +55,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -123,9 +123,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+STATIC_URL = "/static/"
+
 # smtp для отправки разсылок на почту пользователей
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "123kondrich@gmail.com"
-EMAIL_HOST_PASSWORD = "1856123Maks05122002"
+EMAIL_HOST = "smpt.gmail.com"
+EMAIL_HOST_USER = "почта от которой будем отправлять"
+EMAIL_HOST_PASSWORD = "пароль от потчы"
 EMAIL_PORT = 587
