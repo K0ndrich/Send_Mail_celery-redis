@@ -13,7 +13,7 @@ class ContactView(CreateView):
 
     model = Contact
     form_class = ContactForm
-    success_url = reverse_lazy("contact")
+    success_url = "contact"
     template_name = "main/contact.html"
 
     def form_valid(self, form):

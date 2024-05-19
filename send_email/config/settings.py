@@ -127,7 +127,7 @@ STATIC_URL = "/static/"
 
 # smtp для отправки разсылок на почту пользователей
 EMAIL_USE_TLS = True
-EMAIL_HOST = "smpt.gmail.com"
-EMAIL_HOST_USER = "почта от которой будем отправлять"
-EMAIL_HOST_PASSWORD = "пароль от потчы"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "моя почта"
+EMAIL_HOST_PASSWORD = "мой пароль"
 EMAIL_PORT = 587
