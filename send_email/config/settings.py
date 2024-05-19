@@ -127,7 +127,19 @@ STATIC_URL = "/static/"
 
 # smtp для отправки разсылок на почту пользователей
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "моя почта"
 EMAIL_HOST_PASSWORD = "мой пароль"
 EMAIL_PORT = 587
+
+# celery + redis настройка
+
+
+REDIS_HOST = "localhost"
+REDIS_PORT = "6379"
+CELERY_BROKER_URL = "redis://" + REDIS_HOST + ":" + REDIS_PORT + "/0"
+CELERY_BROKER_URL_TRANSPORT_OPTIONS = {"visibility_timeout": 3600}
+CELERY_RESULT_BACKEND = "redis://" + REDIS_HOST + ":" + REDIS_PORT + "/0"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"

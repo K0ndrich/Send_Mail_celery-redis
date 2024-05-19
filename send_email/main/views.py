@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from .models import Contact
 from .forms import ContactForm
 from .service import send
+from .tasks import send_spam_email
 
 
 class ContactView(CreateView):
@@ -18,5 +19,9 @@ class ContactView(CreateView):
 
     def form_valid(self, form):
         form.save()
-        send(form.instance.email)
+
+        # <название таски> .delay (параметры) запуск таски через celery
+        # send_spam_email.delay(form.instance.email)
+
+        send_spam_email.delay(3)
         return super().form_valid(form)
